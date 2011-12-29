@@ -1,0 +1,15 @@
+[ui]
+username = Jiri Suchan <yed@vanyli.net>
+
+[trusted]
+users = root,portage
+groups = root
+
+
+[extensions]
+hgext.convert = 
+mq =
+hgext.record =
+
+[merge-patterns]
+**.cs = meld

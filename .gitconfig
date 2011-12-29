@@ -1,0 +1,22 @@
+[user]
+	name = Jiri Suchan
+	email = jiri.suchan@centrumholdings.com
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 0x0+0+0
+	file-view-hpane-position = 323
+	history-view-vpane-position = 507
+	file-view-vpane-position = 24
+	main-window-view = HistoryView
+[core]
+	editor = vim
+	excludesfile = /home/yed/.gitignore
+[color]
+	ui = auto
+
+
+[push]
+	default = current
+
+[help]
+	autocorrect = 1
