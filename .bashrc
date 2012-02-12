@@ -4,7 +4,7 @@
 export PATH=$PATH:/home/yed/bin
 export WORKON_HOME=~/skript/.virtualenvs
 export PIP_DOWNLOAD_CACHE=~/.pip-cache
-
+export PROJECT_HOME=~/skript
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.

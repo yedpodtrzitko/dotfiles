@@ -1,2 +1,9 @@
 #!/bin/bash
-exec ssh-agent sh -c 'ssh-add > /dev/null & sleep 2; exec openbox-session'
+
+AGENT=ssh-agent
+DBUS='dbus-launch --auto-syntax --exit-with-session'
+DEFAULT_SESSION=openbox-session
+
+do_session() { exec $AGENT $DBUS $1; }
+
+do_session openbox_session

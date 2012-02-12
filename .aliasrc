@@ -1,12 +1,14 @@
 #generic
 alias ll='ls -la'
 alias sl='ll'
+alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
 alias mountandroid='sudo mount -t vfat /dev/sdb /mnt/floppy; sleep 2; mount /mnt/floppy/'
 alias cd..="cd .."
 alias ..="cd .."
 alias ...="cd ../.."
 
 #gentoo
+alias activate="source bin/activate"
 alias eworld="emerge -avuD world"
 alias esync="layman -S; emerge --sync"
 
@@ -15,12 +17,12 @@ alias reboot="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKi
 alias shutdown="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop"
 
 function take {
-    mkdir $1
+    mkdir -p $1
     cd $1
 }
 
 #python
-alias delpyc="find . \( -name '*.pyc' -o -name '*.pyo' \) -exec rm -v {} \;"
+alias delpyc="find . -name '*.py[oc]' -delete"
 
 #git
 alias ga="git add"
@@ -31,7 +33,4 @@ alias gp="git push"
 #django
 alias run="python manage.py runserver 0.0.0.0:8000"
 alias pm="python manage.py"
-alias activate="source bin/activate"
 
-#openbox
-alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
