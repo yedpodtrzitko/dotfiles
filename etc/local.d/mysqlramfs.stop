@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if mountpoint -q /var/ramfs; then
+	if [ -d /var/ramfs/mysql ]
+	then
+		rsync -av --exclude="mysqld-bin.*" /var/ramfs/mysql/ /var/lib/mysql/
+	fi
+fi
+

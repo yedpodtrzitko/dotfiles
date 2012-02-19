@@ -1,0 +1,21 @@
+#!/bin/bash
+
+if lsmod | grep -q acpi_call; then
+m="\_SB.PCI0.XVR0.Z01I.DGOF"
+
+echo -n "Trying $m: "
+echo $m > /proc/acpi/call
+result=$(cat /proc/acpi/call)
+case "$result" in
+	Error*)
+            echo "failed"
+        ;;
+        *)
+            echo "works!"
+            break
+        ;;
+        esac
+else
+echo 'The acpi_call module is not loaded'
+    exit 1
+fi

@@ -1,10 +1,17 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-export PATH=$PATH:/home/yed/bin
+export PATH=$PATH:/home/yed/bin:/home/yed/bin/android-sdk-linux/platform-tools
+#django
 export WORKON_HOME=~/skript/.virtualenvs
 export PIP_DOWNLOAD_CACHE=~/.pip-cache
 export PROJECT_HOME=~/skript
+
+#android
+export ANDROIDSDK=~/bin/android-sdk-linux
+export ANDROIDNDK=~/bin/android-ndk-r7
+export ANDROIDNDKVER=r7
+export ANDROIDAPI=14
 
 # don't put duplicate lines in the history. See bash(1) for more options
 # don't overwrite GNU Midnight Commander's setting of `ignorespace'.
@@ -20,15 +27,8 @@ shopt -s histappend
 shopt -s checkwinsize
 
 
-if [ -f ~/.aliasrc ]; then
-    source ~/.aliasrc
-fi
-if [ -f ~/.local/bin/bashmarks.sh ]; then
-	source ~/.local/bin/bashmarks.sh
-fi
-if [ -f /usr/bin/virtualenvwrapper.sh ]; then
-	source /usr/bin/virtualenvwrapper.sh
-fi
-if [ -f /etc/profile.d/bash-completion.sh ]; then
-	source /etc/profile.d/bash-completion.sh 
-fi
+source ~/.aliasrc
+source ~/.local/bin/bashmarks.sh
+source /usr/bin/virtualenvwrapper.sh
+source /etc/profile.d/bash-completion.sh 
+source ~/bin/autoenv/activate.sh
