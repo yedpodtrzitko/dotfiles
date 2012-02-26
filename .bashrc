@@ -2,10 +2,8 @@
 [ -z "$PS1" ] && return
 
 export PATH=$PATH:/home/yed/bin:/home/yed/bin/android-sdk-linux/platform-tools
-#django
-export WORKON_HOME=~/skript/.virtualenvs
+
 export PIP_DOWNLOAD_CACHE=~/.pip-cache
-export PROJECT_HOME=~/skript
 
 #android
 export ANDROIDSDK=~/bin/android-sdk-linux
@@ -29,6 +27,5 @@ shopt -s checkwinsize
 
 source ~/.aliasrc
 source ~/.local/bin/bashmarks.sh
-source /usr/bin/virtualenvwrapper.sh
 source /etc/profile.d/bash-completion.sh 
 source ~/bin/autoenv/activate.sh
