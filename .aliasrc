@@ -1,16 +1,11 @@
 #generic
 alias ll='ls -la'
-alias sl='ll'
+alias sl='ls'
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
 alias mountandroid='sudo mount -t vfat /dev/sdb /mnt/floppy; sleep 2; mount /mnt/floppy/'
 alias cd..="cd .."
 alias ..="cd .."
-alias ...="cd ../.."
 
-#gentoo
-alias activate="source bin/activate"
-alias eworld="emerge -avuD world"
-alias esync="layman -S; emerge --sync"
 
 #system
 alias reboot="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart"
@@ -21,16 +16,18 @@ function take {
     cd $1
 }
 
+function fag {
+    if [ -z ${1} ]; then
+        echo "find . -type -f -exec grep -l '' {} \;"
+        return 0
+    fi;
+
+    echo "looking for: ${1}"
+    find . -type f -exec grep -l $1 {} \;
+}
+
 #python
-alias delpyc="find . -name '*.py[oc]' -delete"
-
-#git
-alias ga="git add"
-alias gc="git commit -v -m"
-alias gd="git diff"
-alias gp="git push"
-
-#django
+alias delpyc="find . -name '*.py[co]' -delete"
 alias run="python manage.py runserver 0.0.0.0:8000"
 alias pm="python manage.py"
-
+alias activate="source bin/activate"
