@@ -12,18 +12,25 @@ alias reboot="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKi
 alias shutdown="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop"
 
 function take {
-    mkdir -p $1
-    cd $1
+    mkdir -p $1 && cd $1
 }
 
 function fag {
     if [ -z ${1} ]; then
-        echo "find . -type -f -exec grep -l '' {} \;"
-        return 0
+    	echo "find . -type -f -exec grep -l '' {} \;"
+	return 0
     fi;
-
+    
     echo "looking for: ${1}"
     find . -type f -exec grep -l $1 {} \;
+}
+
+function server {
+    # Content-Type 'text/plain', UTF-8
+    local port="${1:-8090}"
+    python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "${port}"
+# }
+
 }
 
 #python

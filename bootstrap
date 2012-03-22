@@ -1,0 +1,13 @@
+#!/bin/bash
+cd "$(dirname "$0")"
+
+function distribute() {
+    rsync --exclude ".git/" --exclude "distribute" --exclude "etc" -av . ~
+}
+
+function collect() {
+    #TODO
+}
+
+if [ $1 = "collect" ]; then collect; else distribute; fi;
+
