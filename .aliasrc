@@ -1,10 +1,9 @@
 #generic
-alias ll='ls -la'
 alias sl='ls'
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
-alias mountandroid='sudo mount -t vfat /dev/sdb /mnt/floppy; sleep 2; mount /mnt/floppy/'
+alias mountandroid='sudo mount -t vfat /dev/sdb ~/mount/flash; sleep 2; mount ~/mount/flash'
 alias cd..="cd .."
-alias ..="cd .."
+alias up="cd .."
 
 
 #system
@@ -34,7 +33,5 @@ function server {
 }
 
 #python
-alias delpyc="find . -name '*.py[co]' -delete"
-alias run="python manage.py runserver 0.0.0.0:8000"
-alias pm="python manage.py"
 alias activate="source bin/activate"
+
