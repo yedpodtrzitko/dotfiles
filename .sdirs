@@ -1,4 +1,7 @@
 export DIR_dwn="$HOME/dwn"
 export DIR_san="$HOME/skript/sanoma"
-export DIR_entree="$HOME/skript/sanoma/entree/entree"
 export DIR_buzyka="$HOME/media/buzyka"
+export DIR_entree="$HOME/skript/sanoma/entree"
+export DIR_yum="$HOME/skript/sanoma/yummy"
+export DIR_tmp="$HOME/tmp"
+export DIR_mnt="$HOME/mount"

@@ -6,6 +6,10 @@ alias cd..="cd .."
 alias up="cd .."
 
 
+#git
+alias gpul="git pull"
+alias gpus="git push"
+
 #system
 alias reboot="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart"
 alias shutdown="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop"
@@ -25,13 +29,9 @@ function fag {
 }
 
 function server {
-    # Content-Type 'text/plain', UTF-8
-    local port="${1:-8090}"
-    python -c $'import SimpleHTTPServer;\nmap = SimpleHTTPServer.SimpleHTTPRequestHandler.extensions_map;\nmap[""] = "text/plain";\nfor key, value in map.items():\n\tmap[key] = value + ";charset=UTF-8";\nSimpleHTTPServer.test();' "${port}"
-# }
-
+    python -m SimpleHTTPServer 8090
 }
 
 #python
 alias activate="source bin/activate"
-
+alias delpyc="find . -name '*.py[co]' -delete"

@@ -8,6 +8,13 @@
             </execute>
         </action>
     </item>
+    <item label="idea">
+        <action name="Execute">
+            <execute>
+                /home/yed/bin/idea/bin/idea.sh
+            </execute>
+        </action>
+    </item>
     <separator/>
     <item label="Filezilla">
         <action name="Execute">
@@ -61,7 +68,7 @@
     <item label="Thunderbird">
         <action name="Execute">
             <execute>
-                /usr/bin/thunderbird
+                thunderbird
             </execute>
         </action>
     </item>
@@ -125,19 +132,9 @@
     </item>
 
 
-    <item label="OO Calc">
+    <item label="*Office">
         <action name="Execute">
-            <command>soffice -calc</command>
-        </action>
-    </item>
-    <item label="OO Writer">
-        <action name="Execute">
-            <command>soffice -writer</command>
-        </action>
-    </item>
-    <item label="OO Impress">
-        <action name="Execute">
-            <command>soffice- impress</command>
+            <command>soffice</command>
         </action>
     </item>
 </menu>
@@ -231,7 +228,7 @@
     <item label="Gedit">
         <action name="Execute">
             <command>
-                gedit
+                leafpad
             </command>
         </action>
     </item>
@@ -239,7 +236,7 @@
     <item label="Gedit foo">
         <action name="Execute">
             <command>
-                gedit ~/Desktop/foo
+                leafpad ~/Desktop/foo
             </command>
         </action>
     </item>
@@ -250,7 +247,7 @@
     <item label="rc.xml">
         <action name="Execute">
             <command>
-                gedit ~/.config/openbox/rc.xml
+                leafpad ~/.config/openbox/rc.xml
             </command>
         </action>
     </item>
@@ -258,7 +255,7 @@
     <item label="menu.xml">
         <action name="Execute">
             <command>
-                gedit ~/.config/openbox/menu.xml
+                leafpad ~/.config/openbox/menu.xml
             </command>
         </action>
     </item>
@@ -266,7 +263,7 @@
     <item label="autostart.sh">
         <action name="Execute">
             <command>
-                gedit ~/.config/openbox/autostart.sh
+                leafpad ~/.config/openbox/autostart.sh
             </command>
         </action>
     </item>
@@ -321,6 +318,14 @@
             </command>
         </action>
     </item>
+    <item label="Disable xscreensaver">
+        <action name="Execute">
+            <command>
+                xscreensaver-command -exit
+            </command>
+        </action>
+    </item>
+
 </menu>
 
 <menu id="root-menu" label="Openbox 3">

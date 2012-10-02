@@ -1,0 +1,10 @@
+SSHAGENT="/usr/bin/ssh-agent"
+SSHAGENTARGS="-s"
+if [ -z "$SSH_AUTH_SOCK" -a -x "$SSHAGENT" ]; then
+        eval `$SSHAGENT $SSHAGENTARGS`
+        trap "kill $SSH_AGENT_PID" 0
+fi
+
+#if which dbus-launch >/dev/null && test -z "$DBUS_SESSION_BUS_ADDRESS"; then
+#    eval `dbus-launch --sh-syntax --exit-with-session`
+#fi
