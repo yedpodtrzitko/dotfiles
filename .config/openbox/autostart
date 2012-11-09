@@ -1,12 +1,13 @@
 #!/bin/bash
 tint2 &
 feh --bg-center /home/yed/private/img/bg/actual.png &
-#compton -cC -e 0.8 -b
+compton -cGC -e 0.8 -b
 xscreensaver -nosplash &
 xbindkeys &
 firefox &
 terminator -e "ssh-add" &
 sudo test_off.sh &
+zim &
 
 if [[ `xrandr -q |grep "LVDS-0 connected" |wc -l` = 1 ]]; then
 	xrandr --output LVDS-0 --below DP-0

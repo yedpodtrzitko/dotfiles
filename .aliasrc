@@ -4,11 +4,12 @@ alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"
 alias mountandroid='sudo mount -t vfat /dev/sdb ~/mount/flash; sleep 2; mount ~/mount/flash'
 alias cd..="cd .."
 alias up="cd .."
-
+alias cal="cal -m"
+alias q!="exit"
 
 #git
-alias gpul="git pull"
-alias gpus="git push"
+alias gpl="git pull"
+alias gps="git push"
 
 #system
 alias reboot="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart"
