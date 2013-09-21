@@ -19,7 +19,7 @@
     <primaryMonitor/>
   </placement>
   <theme>
-    <name>Orta</name>
+    <name>Adwaita-openbox</name>
     <titleLayout>NDLIMC</titleLayout>
     <!--
       available characters are NDSLIMC, each can occur at most once.
@@ -144,6 +144,11 @@
   </dock>
   <keyboard>
     <chainQuitKey>C-g</chainQuitKey>
+	<keybind key="W-l">
+            <action name="Execute">
+                <command>xscreensaver-command -lock</command>
+            </action>
+        </keybind>
     <keybind key="W-Down">
       <action name="UnmaximizeFull"/>
       <action name="Unmaximize"/>
@@ -315,16 +320,6 @@
         <action name="Lower"/>
         <action name="FocusToBottom"/>
         <action name="Unfocus"/>
-      </mousebind>
-      <mousebind action="Click" button="Up">
-        <action name="Shade"/>
-        <action name="FocusToBottom"/>
-        <action name="Unfocus"/>
-        <action name="Lower"/>
-      </mousebind>
-      <mousebind action="Click" button="Down">
-        <action name="Unshade"/>
-        <action name="Raise"/>
       </mousebind>
       <mousebind action="Press" button="Right">
         <action name="Focus"/>

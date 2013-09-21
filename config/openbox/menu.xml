@@ -8,6 +8,13 @@
             </execute>
         </action>
     </item>
+    <item label="webstorm">
+        <action name="Execute">
+            <execute>
+                /home/yed/bin/webstorm/bin/webstorm.sh
+            </execute>
+        </action>
+    </item>
     <item label="idea">
         <action name="Execute">
             <execute>
@@ -80,6 +87,13 @@
             </execute>
         </action>
     </item>
+    <item label="dropbox">
+        <action name="Execute">
+            <execute>
+                dropbox
+            </execute>
+        </action>
+    </item>
     <item label="Xchat">
         <action name="Execute">
             <execute>
@@ -108,22 +122,8 @@
             </command>
         </action>
     </item>
-    <item label="Chromium w/ proxy">
-        <action name="Execute">
-            <command>
-                chromium --proxy-server="fakedns.infra.chservices.cz:3128"
-            </command>
-        </action>
-    </item>
-    <item label="Chromium w/ QA proxy">
-        <action name="Execute">
-            <command>
-                chromium --proxy-server="tst-bastldns.dev.chservices.cz:3128"
-            </command>
-        </action>
-    </item>
-
 </menu>
+
 <menu id="apps-office-menu" label="Office">
     <item label="Stardict">
         <action name="Execute">
@@ -187,7 +187,7 @@
     <item label="QuodLibet">
         <action name="Execute">
             <execute>
-                quodlibet
+                ~/bin/quodlibet/quodlibet/quodlibet.py
             </execute>
         </action>
     </item>
@@ -202,6 +202,13 @@
 
 </menu>
 <menu id="apps-graphics-menu" label="Graphics">
+    <item label="Blender">
+        <action name="Execute">
+            <command>
+                ~/bin/blender/blender
+            </command>
+        </action>
+    </item>
     <item label="Gimp">
         <action name="Execute">
             <command>
@@ -331,13 +338,20 @@
 <menu id="root-menu" label="Openbox 3">
     <item label="Firefox">
         <action name="Execute">
-            <command>firefox</command>
+            <command>firefox -new-instance -P default</command>
         </action>
     </item>
 
-    <item label="Terminator">
+    <item label="Firefox dev">
         <action name="Execute">
-            <execute>terminator -l=simple</execute>
+            <command>firefox -new-instance -P asd</command>
+        </action>
+    </item>
+
+
+    <item label="Terminology">
+        <action name="Execute">
+            <execute>terminator</execute>
         </action>
     </item>
     <menu id="editors-menu"/>

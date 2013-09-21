@@ -1,19 +1,22 @@
 #generic
+alias ls="ls --color=auto"
 alias sl='ls'
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
-alias mountandroid='sudo mount -t vfat /dev/sdb ~/mount/flash; sleep 2; mount ~/mount/flash'
 alias cd..="cd .."
 alias up="cd .."
 alias cal="cal -m"
 alias q!="exit"
-
+alias tunnel="ssh -c arcfour -q -N -f -D 9999 vanyli.net"
+alias jsonformat="python -m json.tool"
 #git
 alias gpl="git pull"
 alias gps="git push"
+alias gpls="git pull && git push"
 
 #system
 alias reboot="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart"
 alias shutdown="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop"
+alias redirect="sudo iptables -t nat -A OUTPUT -p tcp --dport 1935 -j REDIRECT"
 
 function take {
     mkdir -p $1 && cd $1
@@ -21,16 +24,16 @@ function take {
 
 function fag {
     if [ -z ${1} ]; then
-    	echo "find . -type -f -exec grep -l '' {} \;"
+	echo "find . -type -f -exec grep -l '' {} \;"
 	return 0
     fi;
-    
+
     echo "looking for: ${1}"
     find . -type f -exec grep -l $1 {} \;
 }
 
 function server {
-    python -m SimpleHTTPServer 8090
+    python3 -m http.server 8090
 }
 
 #python

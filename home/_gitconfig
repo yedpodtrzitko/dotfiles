@@ -1,0 +1,43 @@
+[user]
+	name = yed_
+	email = yed@vanyli.net
+[core]
+	editor = vim
+	excludesfile = /home/yed/.gitignore
+
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 0x0+0+0
+	file-view-hpane-position = 323
+	history-view-vpane-position = 262
+	file-view-vpane-position = 253
+	main-window-view = HistoryView
+[color]
+	ui = auto
+
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	cp = cherry-pick
+	cps = cherry-pick -s
+	slog = log --pretty=oneline --abbrev-commit
+	glog = log --graph --decorate --pretty=oneline --abbrev-commit
+	gloga = log --graph --decorate --pretty=oneline --abbrev-commit --all
+	unci = reset HEAD^
+	uncommit = reset HEAD^
+	ls = ls-files
+	out = log HEAD..origin
+	killbranches = !git branch | grep -v master | xargs git branch -d 2> /dev/null
+	sync = !git pull && git push
+	comerge = "!x() { target=`git symbolic-ref HEAD`; git co $1; git merge $target; }; x"
+
+[push]
+	default = current
+
+[help]
+	autocorrect = 1
+
+[branch]
+	autosetuprebase = always

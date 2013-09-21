@@ -1,0 +1,13 @@
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+export PATH=$PATH:/home/yed/bin:/home/yed/bin/android-sdk-linux/platform-tools
+
+export PIP_DOWNLOAD_CACHE=~/.pip-cache
+
+export LESS=-R
+
+source ~/.aliasrc
+source ~/.local/bin/bashmarks.sh
+source /usr/bin/activate.sh
+cd .

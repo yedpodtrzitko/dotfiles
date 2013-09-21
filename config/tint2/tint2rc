@@ -5,20 +5,20 @@ background_color = #000000 40
 border_color = #000000 80
 
 # ID 2
-rounded = 4
-border_width = 1
+rounded = 0
+border_width = 0
 background_color = #000000 40
 border_color = #AAAAAA 80
 
 # ID 3
-rounded = 4
-border_width = 1
+rounded = 0
+border_width = 0
 background_color = #CCCCCC 40
 border_color = #FFFFFF 80
 
 # ID 4
-rounded = 4
-border_width = 1
+rounded = 0
+border_width = 0
 background_color = #000000 10
 border_color = #FFFFFF 20
 
@@ -34,16 +34,16 @@ panel_background_id = 1
 
 # Taskbar
 taskbar_mode = single_desktop
-taskbar_padding = 2 2
+taskbar_padding = 0 0
 taskbar_background_id = 0
-taskbar_active_background_id = 0
+taskbar_active_background_id = 1
 
 # Tasks
 urgent_nb_of_blink = 5
 task_icon = 1
 task_text = 0
 task_centered = 1
-task_maximum_size = 32 32
+task_maximum_size = 46 46
 task_padding = 0 0
 task_background_id = 4
 task_active_background_id = 3
@@ -61,12 +61,13 @@ systray = 1
 systray_padding = 0 0 0
 systray_sort = left2right
 systray_background_id = 2
-systray_icon_asb = 100 0 0
+systray_icon_asb = 80 -50 0
+systray_icon_size = 46 46
 # Clock
 time1_format = %H:%M
 time1_font = Bitstream Vera Sans 8
-time2_format = %a %d %b
-time2_font = Bitstream Vera Sans 8
+time2_format = %d.%m.%a
+time2_font = Bitstream Vera Sans 6
 clock_font_color = #FFFFFF 100
 clock_padding = 0 0
 clock_background_id = 0

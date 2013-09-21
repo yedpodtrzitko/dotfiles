@@ -1,0 +1,34 @@
+#!/bin/bash
+
+# arguments:
+# -none-	syncdb + migrate + reqs + lessc
+# first		-as above- + db dir + admin user + git submodules
+# lessc		lessc
+
+root_dir=`grep -oEi "version=([a-z]+)" setup.py |cut -d= -f2`
+if [ "$1" = "first" ] || [ "$1" = "firstrun" ]; then
+	mkdir -p ./.devtmp/media ./.devtmp/static
+	pip install -r ./requirements-dev.txt
+	python manage.py syncdb --noinput
+	python manage.py migrate
+	echo "from django.contrib.auth.models import User; User.objects.create_superuser('admin', 'admin@example.com', 'admin')" | python manage.py shell
+	git submodule update --init
+fi
+
+if [ ! $1 ]; then
+	pip install -r ./requirements-dev.txt
+	python manage.py syncdb --noinput
+	python manage.py migrate
+fi
+
+# all the time
+if which lessc > /dev/null; then
+	echo "compiling .less"
+	lessc --verbose ${root_dir}/project_static/less/master.less > ${root_dir}/project_static/css/master.css
+fi
+
+if which coffee > /dev/null && [ -d ${root_dir}/project_static/coffee ]; then
+	echo "compiling .coffee"
+	coffee -b -o ${root_dir}/project_static/js/ -c ${root_dir}/project_static/coffee/
+fi
+
