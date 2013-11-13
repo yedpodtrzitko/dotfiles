@@ -1,5 +1,5 @@
 [user]
-	name = yed_
+	name = Jiri Suchan
 	email = yed@vanyli.net
 [core]
 	editor = vim
@@ -41,3 +41,5 @@
 
 [branch]
 	autosetuprebase = always
+[http]
+	sslVerify = false
