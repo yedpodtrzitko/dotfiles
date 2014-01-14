@@ -3,15 +3,17 @@ alias ls="ls --color=auto"
 alias sl='ls'
 alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
 alias cd..="cd .."
-alias up="cd .."
-alias cal="cal -m"
 alias q!="exit"
 alias tunnel="ssh -c arcfour -q -N -f -D 9999 vanyli.net"
 alias jsonformat="python -m json.tool"
+alias COMPUTER!="sudo"
+
 #git
 alias gpl="git pull"
 alias gps="git push"
-alias gpls="git pull && git push"
+alias wow="git status"
+alias such="git"
+alias very="git"
 
 #system
 alias reboot="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart"
