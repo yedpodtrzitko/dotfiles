@@ -1,24 +1,23 @@
 #generic
-alias ls="ls --color=auto"
+alias cal="gcal"
 alias sl='ls'
-alias xp='xprop | grep "WM_WINDOW_ROLE\|WM_CLASS" && echo "WM_CLASS(STRING) = \"NAME\", \"CLASS\""'
 alias cd..="cd .."
-alias q!="exit"
-alias tunnel="ssh -c arcfour -q -N -f -D 9999 vanyli.net"
-alias jsonformat="python -m json.tool"
-alias COMPUTER!="sudo"
-
+alias tunnel="ssh  -q -N -f -D 9999 vanyli.net"
+alias COMPUTER="sudo"
+alias ppjson="python -m json.tool"
+alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 #git
 alias gpl="git pull"
 alias gps="git push"
 alias wow="git status"
 alias such="git"
 alias very="git"
+alias authdebug="export OAUTHLIB_INSECURE_TRANSPORT=1"
 
-#system
-alias reboot="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Restart"
-alias shutdown="dbus-send --system --print-reply --dest='org.freedesktop.ConsoleKit' /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop"
-alias redirect="sudo iptables -t nat -A OUTPUT -p tcp --dport 1935 -j REDIRECT"
+function trs {
+    trns --f en -t cs $1;
+    say $1;
+}
 
 function take {
     mkdir -p $1 && cd $1
@@ -39,5 +38,4 @@ function server {
 }
 
 #python
-alias activate="source bin/activate"
 alias delpyc="find . -name '*.py[co]' -delete"

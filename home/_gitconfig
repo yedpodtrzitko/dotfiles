@@ -1,9 +1,10 @@
 [user]
-	name = Jiri Suchan
+	name = yed_
 	email = yed@vanyli.net
 [core]
 	editor = vim
-	excludesfile = /home/yed/.gitignore
+	excludesfile = /Users/yed/.gitignore
+	trustctime = false
 
 [giggle]
 	main-window-maximized = true
@@ -43,3 +44,9 @@
 	autosetuprebase = always
 [http]
 	sslVerify = false
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
