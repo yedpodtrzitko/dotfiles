@@ -1,5 +1,12 @@
-BASH_DIR=`dirname $BASH_SOURCE`
-ENV_DIR="${BASH_DIR}/venv/"
-if [ ! $VIRTUAL_ENV ] || [ $VIRTUAL_ENV != $ENV_DIR ]; then
-	source "${ENV_DIR}bin/activate"
+if [ -n "$ZSH_VERSION" ]; then
+  SRC_DIR=`dirname $0`
+elif [ -n "$BASH_VERSION" ]; then
+  SRC_DIR=`dirname $BASH_SOURCE`
+fi
+
+ENV_DIR="${SRC_DIR}/venv/"
+
+
+if [[ -e "${ENV_DIR}bin/activate" && ( ! $VIRTUAL_ENV || $VIRTUAL_ENV != $ENV_DIR ) ]]; then
+  . "${ENV_DIR}bin/activate"
 fi

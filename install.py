@@ -34,7 +34,7 @@ def install():
 
             if exists(path_to):
                 os.rename(path_to, "%s_" % path_to)
-         
+
             os.symlink(path_from, path_to)
 
 if __name__ == '__main__':

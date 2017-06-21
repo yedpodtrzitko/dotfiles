@@ -1,22 +1,24 @@
+#zshmarks
+alias g="jump"
+alias s="bookmark"
+alias d="deletemark"
+alias l="showmarks"
+
 #generic
 alias cal="gcal"
-alias sl='ls'
-alias cd..="cd .."
 alias tunnel="ssh  -q -N -f -D 9999 vanyli.net"
-alias COMPUTER="sudo"
 alias ppjson="python -m json.tool"
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
+
 #git
 alias gpl="git pull"
 alias gps="git push"
-alias wow="git status"
-alias such="git"
-alias very="git"
-alias authdebug="export OAUTHLIB_INSECURE_TRANSPORT=1"
+alias rmerged="git branch --merged | egrep -v \"(^\*|master|dev)\" | xargs git branch -d"
 
-function trs {
-    trns --f en -t cs $1;
-    say $1;
+alias dynamo="dynamodb-local -inMemory -sharedDb" 
+
+function randmac {
+    sudo ifconfig en0 ether $1
 }
 
 function take {
@@ -35,6 +37,26 @@ function fag {
 
 function server {
     python3 -m http.server 8090
+}
+
+#function iterm2_print_user_vars() {
+#  iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
+#}
+
+function makevenv {
+  virtualenv-2.7 venv
+  ln -s ~/bin/autenv .env
+  cd .
+}
+
+docker-rm(){
+	docker rm $(docker ps -q -f status=exited)
+}
+docker-rmv(){
+	docker volume rm $(docker volume ls -q -f dangling=true)
+}
+docker-rmi(){
+	docker rmi $(docker images -q -f dangling=true)
 }
 
 #python

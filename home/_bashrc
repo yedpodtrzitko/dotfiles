@@ -8,9 +8,19 @@
 export PATH=$PATH:/Users/yed/bin
 export ANSIBLE_CONFIG=/Users/yed/.ansible.cfg
 export PS1="\D{%T} \[\033[01;32m\]\u@\h\[\033[01;34m\] \w \$\[\033[00m\]\n"
+export HISTCONTROL=ignoredups:erasedups
+
+# iTerm specifics
+if [ "$TERM_PROGRAM" == iTerm.app ]; then
+  export PS1="\033]50;SetProfile=GentooColours\a$PS1"
+  alias ssh='echo -n -e "\033]50;SetProfile=sshBackground\a"; ssh'
+fi
+
+complete -C aws_completer aws
+
 
 source ~/.aliasrc
-source ~/bin/bashmarks/bashmarks.sh
-source /usr/local/bin/activate.sh
+source ~/bin/bashmarks/shellmarks.sh
+source ~/.autoenv/activate.sh
 cd .
 
