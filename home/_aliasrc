@@ -1,5 +1,5 @@
 #zshmarks
-alias g="jump"
+alias j="jump"
 alias s="bookmark"
 alias d="deletemark"
 alias l="showmarks"
@@ -9,13 +9,13 @@ alias cal="gcal"
 alias tunnel="ssh  -q -N -f -D 9999 vanyli.net"
 alias ppjson="python -m json.tool"
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
+alias k="kubectl"
 
 #git
 alias gpl="git pull"
 alias gps="git push"
+alias gpsf="git push --force-with-lease"
 alias rmerged="git branch --merged | egrep -v \"(^\*|master|dev)\" | xargs git branch -d"
-
-alias dynamo="dynamodb-local -inMemory -sharedDb" 
 
 function randmac {
     sudo ifconfig en0 ether $1
@@ -39,16 +39,6 @@ function server {
     python3 -m http.server 8090
 }
 
-#function iterm2_print_user_vars() {
-#  iterm2_set_user_var gitBranch $((git branch 2> /dev/null) | grep \* | cut -c3-)
-#}
-
-function makevenv {
-  virtualenv-2.7 venv
-  ln -s ~/bin/autenv .env
-  cd .
-}
-
 docker-rm(){
 	docker rm $(docker ps -q -f status=exited)
 }
@@ -61,3 +51,4 @@ docker-rmi(){
 
 #python
 alias delpyc="find . -name '*.py[co]' -delete"
+

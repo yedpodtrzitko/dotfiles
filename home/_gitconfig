@@ -1,36 +1,29 @@
 [user]
-	name = yedpodtrzitko
-	email = yed@vanyli.net
+	;name = yedpodtrzitko
+	name = Jiri Suchan
+	email = yed@vanyli.net 
+;vanyli.net
 [core]
 	editor = vim
 	excludesfile = /Users/yed/.gitignore
 	trustctime = false
 
-[giggle]
-	main-window-maximized = true
-	main-window-geometry = 0x0+0+0
-	file-view-hpane-position = 323
-	history-view-vpane-position = 262
-	file-view-vpane-position = 253
-	main-window-view = HistoryView
 [color]
 	ui = auto
 
+[color "diff"]
+    frag = cyan
+    new = green
+    commit = yellow
+
 [alias]
-	st = status
-	ci = commit
 	co = checkout
-	br = branch
 	cp = cherry-pick
-	cps = cherry-pick -s
 	slog = log --pretty=oneline --abbrev-commit
 	glog = log --graph --decorate --pretty=oneline --abbrev-commit
 	gloga = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	ls = ls-files
-	out = log HEAD..origin
-	killbranches = !git branch | grep -v master | xargs git branch -d 2> /dev/null
-	sync = !git pull && git push
-
+  lb = !git reflog show --pretty=format:'%gs ~ %gd' --date=relative | grep 'checkout:' | grep -oE '[^ ]+ ~ .*' | awk -F~ '!seen[$1]++' | head -n 10 | awk -F' ~ HEAD@{' '{printf(\"  \\033[33m%s: \\033[37m %s\\033[0m\\n\", substr($2, 1, length($2)-1), $1)}'
 [push]
 	default = current
 
@@ -44,6 +37,13 @@
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[gpg]
+	program = gpg
+[rerere]
+	enabled = true
