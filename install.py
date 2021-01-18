@@ -14,7 +14,7 @@ def install():
             continue
 
         with open(join(ORIGIN, dname, '.target'), 'r') as f:
-            target_dir = f.read().strip()
+            target_dir = os.path.expanduser(f.read().strip())
 
         if not exists(target_dir):
             os.makedirs(target_dir)

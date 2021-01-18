@@ -2,7 +2,6 @@
 	;name = yedpodtrzitko
 	name = Jiri Suchan
 	email = yed@vanyli.net 
-;vanyli.net
 [core]
 	editor = vim
 	excludesfile = /Users/yed/.gitignore
