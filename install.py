@@ -30,12 +30,15 @@ def install():
 
             path_to = join(target_dir, phile)
             if islink(path_to):
+                print("skipping symlink %s" % path_to)
                 continue
 
             if exists(path_to):
+                print("renaming existing %s" % path_to)
                 os.rename(path_to, "%s_" % path_to)
 
             os.symlink(path_from, path_to)
+            print("installing %s" % path_to)
 
 if __name__ == '__main__':
     install()

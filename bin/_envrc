@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+if [[ $USER == "yed" ]] && [[ -z $MC_SID ]]; then
+  dotenv
+
+  eval "$(pyenv init - --no-rehash)"
+  eval "$(pyenv virtualenv-init - bash)"
+  pyenv activate ${ENV_NAME}
+fi

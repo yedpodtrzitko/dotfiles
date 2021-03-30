@@ -6,7 +6,7 @@ alias l="showmarks"
 
 #generic
 alias cal="gcal"
-alias tunnel="ssh  -q -N -f -D 9999 vanyli.net"
+alias tunnel="ssh -q -C -N -f -D 9999 vanyli.net"
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 
 #git
@@ -53,8 +53,6 @@ x86(){
 
 #python
 alias delpyc="find . -name '*.py[co]' -delete"
-
-alias ibrew='arch -x86_64 /usr/local/bin/brew'
 
 #alias keymap='hidutil property --set \'{"UserKeyMapping":[{"HIDKeyboardModifierMappingSrc":0x700000039,"HIDKeyboardModifierMappingDst":0x700000012}]}\''
 
