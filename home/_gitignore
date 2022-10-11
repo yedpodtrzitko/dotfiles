@@ -1,3 +1,4 @@
+.envrc
 *.py[co]
 .idea
 .DS_Store

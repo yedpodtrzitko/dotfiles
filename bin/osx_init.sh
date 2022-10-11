@@ -8,9 +8,6 @@ launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 # disable time machine
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
-# turn off sudden movement sensor
-sudo pmset -a sms 0
-
 # save to disk instead of icloud
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
@@ -27,3 +24,10 @@ defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # disable Captive Portal
 defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
+
+# Always show scrollbars
+defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
+# Possible values: `WhenScrolling`, `Automatic` and `Always`
+
+# create screenshots as jpg
+defaults write com.apple.screencapture type jpg; killall SystemUIServer

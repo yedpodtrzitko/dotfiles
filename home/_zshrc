@@ -9,7 +9,6 @@ export ZSH=/Users/yed/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="bullet-train"
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -53,12 +52,11 @@ CASE_SENSITIVE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zshmarks python pip gcloud)
 
+plugins=(git zshmarks python pip gcloud)
 eval "$(direnv hook zsh)"
 
 source $ZSH/oh-my-zsh.sh
-
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -92,28 +90,19 @@ source $HOME/.aliasrc
 export GOPATH=/Users/yed/bin/gopath
 export PYTHONIOENCODING=utf-8
 
-BULLETTRAIN_PROMPT_ORDER=(
-    time
-    status
-    #custom
-    #context
-    dir
-    virtualenv
-    git
-    #cmd_exec_time
-)
 export PYTHONSTARTUP=~/bin/pythonstartup.py
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PIP_REQUIRE_VIRTUALENV=true
 
+export PATH=$(pyenv root)/shims:$PATH
+export PATH="${HOME}/Library/Android/sdk/tools:${HOME}/Library/Android/sdk/platform-tools:/opt/homebrew/opt/postgresql/bin:$PATH"
 
-export PATH="/opt/homebrew/opt/postgresql@12/bin:$PATH"
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/opt/openssl/lib/"
 
+export NVM_DIR=~/.nvm
+source ${NVM_DIR}/nvm.sh
 
-function _vanyli_prompt {
-  PS1="$(goshell $?)"
-}
+setopt PROMPT_SUBST
+setopt promptsubst
 
-#precmd() { _vanyli_prompt }
-
+PROMPT='$(~/bin/rustshell $?) '
