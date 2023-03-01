@@ -18,6 +18,10 @@ alias gps="git push"
 alias gpsf="git push --force-with-lease"
 alias rmerged="git branch --merged | egrep -v \"(^\*|master|dev)\" | xargs git branch -d"
 
+
+#misc
+alias tf="terraform"
+
 function remapf5f6 {
     /usr/bin/hidutil property --set '{"UserKeyMapping": [{"HIDKeyboardModifierMappingSrc": 0xC000000CF, "HIDKeyboardModifierMappingDst": 0xFF00000009}, {"HIDKeyboardModifierMappingSrc": 0x10000009B, "HIDKeyboardModifierMappingDst": 0xFF00000008}]}'
 }

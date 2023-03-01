@@ -1,8 +1,9 @@
+#zmodload zsh/zprof
 #source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 #source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 # If you come from bash you might have to change your $PATH.
 #export PATH="/usr/local/opt/openssl/bin:/usr/local/opt/coreutils/libexec/gnubin:$HOME/bin:/usr/local/sbin:/usr/local/opt/openssl/bin/:/opt/homebrew/bin/:/usr/local/bin/:$PATH"
-export PATH="$HOME/bin:/usr/local/sbin:/usr/local/bin/:/opt/homebrew/bin/:$PATH"
+export PATH="/opt/homebrew/opt/node@18/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin/:/opt/homebrew/bin/:$PATH"
 export LC_ALL=en_US.UTF-8
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/yed/.oh-my-zsh
@@ -18,7 +19,7 @@ CASE_SENSITIVE="true"
 # HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
@@ -96,11 +97,12 @@ export PIP_REQUIRE_VIRTUALENV=true
 
 export PATH=$(pyenv root)/shims:$PATH
 export PATH="${HOME}/Library/Android/sdk/tools:${HOME}/Library/Android/sdk/platform-tools:/opt/homebrew/opt/postgresql/bin:$PATH"
+export PATH="${HOME}/.cargo/bin:$PATH"
 
 export LIBRARY_PATH="$LIBRARY_PATH:/usr/local/opt/openssl/lib/"
 
 export NVM_DIR=~/.nvm
-source ${NVM_DIR}/nvm.sh
+#source ${NVM_DIR}/nvm.sh
 
 setopt PROMPT_SUBST
 setopt promptsubst

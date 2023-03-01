@@ -1,6 +1,7 @@
 .envrc
 *.py[co]
 .idea
+.fleet
 .DS_Store
 node_modules
 .env

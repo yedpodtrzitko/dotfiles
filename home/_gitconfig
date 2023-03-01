@@ -1,7 +1,6 @@
 [user]
-	;name = yedpodtrzitko
-	name = Jiri Suchan
-	email = yed@vanyli.net 
+	name = yedpodtrzitko
+	email = yed@vanyli.net
 [core]
 	editor = vim
 	excludesfile = /Users/yed/.gitignore
@@ -43,3 +42,4 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+
