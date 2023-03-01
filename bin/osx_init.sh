@@ -3,12 +3,12 @@
 defaults write com.apple.TextEdit RichText -int 0
 
 # dont launch itunes for media keys
-launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
+#launchctl unload -w /System/Library/LaunchAgents/com.apple.rcd.plist
 
-# disable time machine
+echo "disable time machine"
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
-# save to disk instead of icloud
+echo "save to disk instead of icloud"
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # home is default Finder location
@@ -23,7 +23,7 @@ open /System/Library/CoreServices/PowerChime.app
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
 # disable Captive Portal
-defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
+#defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
 
 # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"

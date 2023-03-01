@@ -6,7 +6,7 @@
 export PATH="/opt/homebrew/opt/node@18/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin/:/opt/homebrew/bin/:$PATH"
 export LC_ALL=en_US.UTF-8
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/yed/.oh-my-zsh
+#export ZSH=/Users/yed/.oh-my-zsh
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
@@ -57,7 +57,7 @@ DISABLE_AUTO_UPDATE="true"
 plugins=(git zshmarks python pip gcloud)
 eval "$(direnv hook zsh)"
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -107,4 +107,6 @@ export NVM_DIR=~/.nvm
 setopt PROMPT_SUBST
 setopt promptsubst
 
-PROMPT='$(~/bin/rustshell $?) '
+if [[ -f ~/bin/rustshell ]]; then
+  PROMPT='$(~/bin/rustshell $?) '
+fi 
