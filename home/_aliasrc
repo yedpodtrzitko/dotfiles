@@ -1,11 +1,14 @@
-#zshmarks
-alias j="jump"
-alias s="bookmark"
-alias d="deletemark"
-alias l="showmarks"
-
 #copy-paste fixer
 alias $=''
+
+# rustmarks
+function j {
+  target=$(rustmarks jump $1)
+  retval=$?
+  if [ $retval -eq 0 ]; then
+     cd $target
+  fi
+}
 
 #generic
 alias cal="gcal"
@@ -13,6 +16,7 @@ alias tunnel="ssh -q -C -N -f -D 9999 vanyli.net"
 alias flushdns="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
 
 #git
+alias g="git"
 alias gpl="git pull"
 alias gps="git push"
 alias gpsf="git push --force-with-lease"

@@ -1,4 +1,8 @@
 #!/bin/bash
+
+echo "move dock to right"
+defaults write com.apple.dock "orientation" -string "right" && killall Dock
+
 # textedit is plaintext
 defaults write com.apple.TextEdit RichText -int 0
 
@@ -31,3 +35,6 @@ defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
 
 # create screenshots as jpg
 defaults write com.apple.screencapture type jpg; killall SystemUIServer
+
+echo "silence boot sound"
+sudo nvram SystemAudioVolume=" "
