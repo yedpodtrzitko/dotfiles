@@ -2,8 +2,7 @@
 #source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 #source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc
 # If you come from bash you might have to change your $PATH.
-#export PATH="/usr/local/opt/openssl/bin:/usr/local/opt/coreutils/libexec/gnubin:$HOME/bin:/usr/local/sbin:/usr/local/opt/openssl/bin/:/opt/homebrew/bin/:/usr/local/bin/:$PATH"
-export PATH="/opt/homebrew/opt/node@18/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin/:/opt/homebrew/bin/:$PATH"
+export PATH="/opt/homebrew/opt/node@18/bin:$HOME/bin:/opt/homebrew/opt/postgresql@15/bin:/usr/local/opt/coreutils/libexec/gnubin:$HOME/bin:/usr/local/sbin:/usr/local/opt/openssl/bin/:/opt/homebrew/bin/:/usr/local/bin/:$PATH"
 export LC_ALL=en_US.UTF-8
 # Path to your oh-my-zsh installation.
 #export ZSH=/Users/yed/.oh-my-zsh
@@ -91,7 +90,7 @@ source $HOME/.aliasrc
 export GOPATH=/Users/yed/bin/gopath
 export PYTHONIOENCODING=utf-8
 
-export PYTHONSTARTUP=~/bin/pythonstartup.py
+export PYTHONSTARTUP=~/dev/dotfiles/misc/pythonstartup.py
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PIP_REQUIRE_VIRTUALENV=true
 

@@ -1,2 +1,0 @@
-#!/usr/bin/env zsh
-cd "/Users/yed/.oh-my-zsh/custom/themes" && wget https://raw.githubusercontent.com/caiogondim/bullet-train-oh-my-zsh-theme/master/bullet-train.zsh-theme

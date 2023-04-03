@@ -5,6 +5,7 @@
 	editor = vim
 	excludesfile = /Users/yed/.gitignore
 	trustctime = false
+	pager = less -+$LESS -RS
 
 [color]
 	ui = auto

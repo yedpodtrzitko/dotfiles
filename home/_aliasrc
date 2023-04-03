@@ -70,5 +70,8 @@ x86(){
 alias delpyc="find . -name '*.py[co]' -delete"
 alias brew="/opt/homebrew/bin/brew"
 
-# delete spotlight index
-#sudo mdutil -E
+# copy .env file into current location
+function initenv {
+    cp ~/dev/dotfiles/_envrc ./.envrc
+    touch .env
+}
