@@ -38,3 +38,7 @@ defaults write com.apple.screencapture type jpg; killall SystemUIServer
 
 echo "silence boot sound"
 sudo nvram SystemAudioVolume=" "
+
+# right-click bottom-right
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
