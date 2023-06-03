@@ -81,9 +81,11 @@ x86(){
 #python
 alias delpyc="find . -name '*.py[co]' -delete"
 alias brew="/opt/homebrew/bin/brew"
+alias prettyjson='python -m json.tool'
 
 # copy .env file into current location
 function initenv {
     cp ~/dev/dotfiles/_envrc ./.envrc
-    touch .env
+    echo "ENV_NAME=311" > .env
+    direnv allow
 }

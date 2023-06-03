@@ -4,11 +4,6 @@
 # If you come from bash you might have to change your $PATH.
 export PATH="/opt/homebrew/opt/node@18/bin:$HOME/bin:/opt/homebrew/opt/postgresql@15/bin:/usr/local/opt/coreutils/libexec/gnubin:$HOME/bin:/usr/local/sbin:/usr/local/opt/openssl/bin/:/opt/homebrew/bin/:/usr/local/bin/:$PATH"
 export LC_ALL=en_US.UTF-8
-# Path to your oh-my-zsh installation.
-#export ZSH=/Users/yed/.oh-my-zsh
-# Set name of the theme to load. Optionally, if you set this to "random"
-# it'll load a random theme each time that oh-my-zsh is loaded.
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
@@ -53,7 +48,7 @@ setopt HIST_SAVE_NO_DUPS
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git zshmarks python pip gcloud)
+#plugins=(git zshmarks python pip gcloud)
 eval "$(direnv hook zsh)"
 
 #source $ZSH/oh-my-zsh.sh
