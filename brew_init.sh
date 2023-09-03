@@ -1,2 +1,2 @@
 #!/bin/sh
-brew install spotify vlc blender transmission firefox thunderbird notion spotify vlc blender transmission steam 
+brew install spotify vlc transmission firefox thunderbird notion steam itsycal
