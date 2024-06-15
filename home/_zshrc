@@ -4,7 +4,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH="${HOME}/.cargo/bin:$HOME/bin:/usr/local/opt/coreutils/libexec/gnubin:/usr/local/sbin:/usr/local/opt/openssl/bin/:/usr/local/bin:$PATH"
 export PATH="${HOME}/Library/Android/sdk/tools:${HOME}/Library/Android/sdk/platform-tools:$PATH"
-export PATH="$(pyenv root)/shims:/opt/homebrew/opt/node@18/bin:$PATH"
+export PATH="${HOME}/.rye/env:$(pyenv root)/shims:/opt/homebrew/opt/node@18/bin:$PATH"
 
 export LC_ALL=en_US.UTF-8
 # export LANG=en_US.UTF-8
@@ -80,3 +80,8 @@ fi
 autoload -Uz compinit && compinit
 autoload -U select-word-style
 select-word-style bash
+
+
+#export JAVA_HOME="/Users/yed/Applications/Android Studio.app/Contents/jbr/Contents/Home/"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+eval "$(fzf --zsh)"

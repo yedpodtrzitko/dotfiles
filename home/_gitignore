@@ -2,6 +2,10 @@
 *.py[co]
 .idea
 .fleet
+.vscode
+.zed
 .DS_Store
 node_modules
 .env
+twisto/twisto/settings/yed.py
+pyrightconfig.json

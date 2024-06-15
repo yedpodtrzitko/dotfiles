@@ -12,6 +12,12 @@ defaults write com.apple.TextEdit RichText -int 0
 echo "disable time machine"
 hash tmutil &> /dev/null && sudo tmutil disablelocal
 
+# disable iCloud
+defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+# disable Captive Portal
+#defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
+
 echo "save to disk instead of icloud"
 defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
 
@@ -22,12 +28,6 @@ defaults write com.apple.finder NewWindowTargetPath -string "file://${HOME}"
 # play sound on charger connection
 defaults write com.apple.PowerChime ChimeOnAllHardware -bool true && \
 open /System/Library/CoreServices/PowerChime.app
-
-# disable iCloud
-defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
-
-# disable Captive Portal
-#defaults write /Library/Preferences/SystemConfiguration/com.apple.captive.control Active -bool false
 
 # Always show scrollbars
 defaults write NSGlobalDomain AppleShowScrollBars -string "Always"
@@ -42,3 +42,7 @@ sudo nvram SystemAudioVolume=" "
 # right-click bottom-right
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadCornerSecondaryClick -int 2
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadRightClick -bool true
+
+# icons spacing in menubar
+defaults -currentHost write -globalDomain NSStatusItemSpacing -int 6
+defaults -currentHost write -globalDomain NSStatusItemSelectionPadding -int 12
